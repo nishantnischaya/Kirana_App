@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Kirana Store</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{ url_for('static', filename='./styles/styles.css') }}">
+    <link rel="stylesheet" type='text/css' media='screen' href="{{ url_for('static', filename='./styles/bootstrap.min.css') }}">
+    <link rel="stylesheet" type='text/css' media='screen' href="{{ url_for('static', filename='./styles/fontawesome/css/all.css') }}">
+</head>    
+<body>
+    {% include 'includes/navbar.html' %}
+    {% include 'includes/mainarea.html' %}   
+    <script type = "text/javascript" src = "{{ url_for('static', filename = './js/jquery.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = './js/webcamfeed.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = './js/bootstrap.js') }}" ></script>
+</body>
+</html>

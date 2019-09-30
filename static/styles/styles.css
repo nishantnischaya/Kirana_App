@@ -1,0 +1,40 @@
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {float:none;}
+
+.heading{
+    color: #FFFFFF; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+.mainarea{
+    padding: 15px;
+}
+
+.borders {
+    border-radius: 10px;
+    border: 1px solid #C7C7C7   ;
+    padding: 20px; 
+    width: 100%;
+    height: 85vh; 
+}
+
+.webcam{
+    width: 100%;
+    background: #C7C7C7;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding-top : 4px;
+    margin: 0%;
+}
+
+.customerinfo{
+    margin-bottom: 10px;
+}
+
+.area{
+    margin-top: 40px; 
+}

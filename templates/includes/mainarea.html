@@ -1,0 +1,75 @@
+<div class="mainarea">
+        
+        <div class="container-fluid">
+        
+            <div class="row">
+                <!-- Billing Table -->
+                <div class="col-9">
+                    <div class="borders">
+                        {% include 'includes/datatable.html' %}  
+                    </div>
+                </div>
+
+                <!--Webcam Feedback and Customer Information-->
+                <div class="col-3">
+                    <div class="borders">
+                        <div class="container-fluid">
+                            
+                            <div class="row">
+                                
+                                <div class="col-12">
+                                    <!-- For Customer info -->
+                                    <h5>
+                                        <i class="far fa-user"></i>
+                                        Customer Information
+                                    </h5>
+                                    <form class="form-inline">
+                                        <div class="form-group">
+                                          <input type="text" class="form-control customerinfo" placeholder="Customer Name">
+                                        </div>
+                                        <div class="form-group">
+                                                <input type="text" class="form-control customerinfo" placeholder="Phone Number">
+                                              </div>
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fas fa-print"></i>
+                                            &nbsp;Generate Bill
+                                        </button>
+                                      </form>
+                                </div>
+
+                                <div class="col-12 area">
+                                    <!-- For System info -->
+                                    <h5>
+                                        <i class="far fa-clock"></i>
+                                        Time and Location
+                                    </h5>
+                                    <b>Date: </b> {{date}}
+                                    <br>
+                                    <b>Time: </b> {{time}}
+                                    <br>
+                                    <b>Location: </b> Sector-22, Rohini, Delhi, 110086
+                                </div>
+
+                                <div class="col-12 area">
+                                    <!-- For Webcam Feedback -->
+                                    <h5>
+                                        <i class="fas fa-tv"></i>
+                                        Webcam Feed
+                                    </h5>
+                                    <div class="webcam">
+                                        <video id="webcamstream" width="100%" height="180" autoplay></video>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+
+</div>
+
