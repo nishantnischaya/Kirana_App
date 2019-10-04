@@ -1,6 +1,6 @@
 from flask import *
-from getDateTime import DateTime
-from data import BillData
+from scripts.getDateTime import DateTime
+from scripts.data import BillData
 
 app = Flask(__name__)
 

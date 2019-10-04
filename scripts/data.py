@@ -1,4 +1,4 @@
-from getData import FetchData
+from scripts.getData import FetchData
 
 def BillData():
     products = []
