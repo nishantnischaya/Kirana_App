@@ -20,7 +20,7 @@ def getImage():
    image_obj = request.json
    # print(type(image_obj))
    image = image_obj['data'] 
-   print(image)
+   # print(image)
    return image_obj
 
 if __name__ == '__main__':
