@@ -2,6 +2,8 @@ from flask import *
 from scripts.getDateTime import DateTime
 from scripts.data import BillData
 from scripts.test import argmax
+from scripts.base64conversion import convertToImage
+import cv2
 
 app = Flask(__name__)
 
@@ -19,9 +21,12 @@ def index():
 def getImage():
    image_obj = request.json
    # print(type(image_obj))
-   image = image_obj['data'] 
-   # print(image)
-   return image_obj
+   imagestring = image_obj['data'] 
+   s = convertToImage(imagestring)
+   image = cv2.imread('temp_image.jpg')
+   predicted_value = argmax(image)
+   return 'success'
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0',debug=True,port='5000')
+  

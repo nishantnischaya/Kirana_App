@@ -10,6 +10,9 @@ import torch.nn.functional as f
 import matplotlib.pyplot as p
 from torch.utils.data import TensorDataset as dset
 from torch.utils.data import DataLoader as dl
+
+predictive_threshold = 0.40
+
 class ConvNet(nn.Module):
     def __init__(self):
         super(ConvNet, self).__init__()
@@ -47,7 +50,10 @@ class ConvNet(nn.Module):
 #print(x.type)
 #test_loader=dl(myset,batch_size=64,shuffle=True)
 model = ConvNet()
-model.load_state_dict(torch.load("./model/model.pth"))
+# curr_path = os.path.dirname(__file__)
+# model_path = os.path.relpath('model\model.pth', curr_path)
+curr_path = os.path.dirname(__file__)
+model.load_state_dict(torch.load(curr_path + "/model/model.pth"))
 print("loaded model")
 device = torch.device("cpu" if torch.cuda.is_available() else "cpu")
 model.to(device)
@@ -60,8 +66,14 @@ def argmax(image):
      
     outputs = model(images.view(-1,3,120,160).type(torch.FloatTensor))
     probability=torch.nn.Softmax()(outputs)
-    print(probability)
+    print(probability.tolist()[0])
     #type error may exist with cuda change to torch.cuuda .Floattensor
     _, predicted = torch.max(outputs.data, 1)
-    print(predicted)
-    return predicted
+    idx = predicted.tolist()[0]
+    value = probability.tolist()[0][idx]
+    
+    if value < predictive_threshold:
+        idx = -1
+
+    print(idx)
+    return idx
