@@ -65,6 +65,3 @@ def argmax(image):
     _, predicted = torch.max(outputs.data, 1)
     print(predicted)
     return predicted
-
-img = cv2.imread('test.jpg')
-argmax(img) 
